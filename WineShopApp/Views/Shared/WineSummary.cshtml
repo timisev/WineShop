@@ -1,0 +1,26 @@
+﻿@model Wine
+
+<div class="m_block">
+    <div class="card" style="width: 18rem;"> 
+        <a href="~/home/detail/@Model.Id">
+        <img src="/img/вино.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+                <h5>@Model.Category?.Name, @Model.Name, @Model.Year</h5>
+                <p><b>@Model.Price</b> руб</p>
+        </div>
+        </a>
+        <div>
+            <form id="@Model.Id" asp-action="AddToCart"
+                  asp-controller="Cart" method="post">
+                <input type="hidden" asp-for="@Model.Id"/>
+                <input type="hidden" name="returnUrl"
+                    value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                <span class="card-text p-1">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        В корзину
+                    </button>
+                </span>
+            </form>
+        </div>
+    </div>
+</div>

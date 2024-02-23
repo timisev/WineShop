@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Wine>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td scope="col">Name</td>
+            <td scope="col">Year</td>
+            <td scope="col">Category</td>
+            <td scope="col">Year</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var w in Model)
+        {
+            <tr>
+                <td scope="col">@w.Name</td>
+                <td scope="col">@w.Year</td>
+                <td scope="col">@w.Category?.Name</td>
+                <td scope="col">@w.Year</td>
+                <td>
+                    <form asp-action="Delete" asp-controller="Admin" method="post">
+                        <a asp-action="Edit" asp-route-Id="@w.Id" class="btn btn-warning btn-sm">Edit</a>
+                        <input type="hidden" value="@w.Id" />
+                        <button class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

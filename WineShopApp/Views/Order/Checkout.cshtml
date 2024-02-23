@@ -1,0 +1,42 @@
+﻿@model Order
+
+<form asp-action="" asp-controller="Order" method="post">
+    <input type="hidden" value="OrderID" />
+    <div class="mb-3">
+        <label asp-for="Lines" class="form-label">Lines</label>
+        <input asp-for="Lines" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Line1" class="form-label">Line1</label>
+        <input asp-for="Line1" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Line2" class="form-label">Line2</label>
+        <input asp-for="Line2" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Line3" class="form-label">Line3</label>
+        <input asp-for="Line3" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="State" class="form-label">State</label>
+        <input asp-for="State" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Zip" class="form-label">Zip</label>
+        <input asp-for="Zip" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Country" class="form-label">Country</label>
+        <input asp-for="Country" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="GiftWrap" class="form-label">GiftWrap</label>
+        <input asp-for="GiftWrap" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Оформить заказ</button>
+</form>

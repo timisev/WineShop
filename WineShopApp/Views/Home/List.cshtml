@@ -1,0 +1,10 @@
+﻿@model WineListViewModel
+
+<h2>Вино</h2>
+
+@foreach(var w in Model.Wines)
+{
+    @Html.Partial("WineSummary", w)
+}
+
+<div page-model="@Model.PagingInfo" page-action="List"></div>
